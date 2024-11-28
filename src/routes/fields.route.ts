@@ -7,6 +7,7 @@ import {
   updateField,
   deleteField,
   getFieldsByOwner,
+  getFieldByOwner,
 } from "../controllers";
 import {
   createFieldValidation,
@@ -20,6 +21,8 @@ const router = Router();
 router.get("/", getFields);
 
 router.get("/myFields/:ownerId", getFieldsByOwner);
+
+router.get("/myField/:ownerId", getFieldByOwner);
 
 router.get("/:id", authMiddleware, getField);
 
